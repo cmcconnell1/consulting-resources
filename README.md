@@ -1,5 +1,5 @@
-# Personal research notes (docs, guides, cheatsheets) 
-_which may contain errors, omissions, etc._ 
+# Personal research notes (docs, guides, cheatsheets)
+_which may contain errors, omissions, etc._
 
 A collection of guides, research notes, comparisons, reference materials, etc. for cloud-native technologies.
 
@@ -13,13 +13,22 @@ A collection of guides, research notes, comparisons, reference materials, etc. f
   - Integration patterns and best practices
   - Future trends and recommendations
 
+### API Management & Service Communication
+- [API Gateway and Service Mesh Comparison Guide](api-gateway-service-mesh-comparison.md) - Detailed analysis of API Gateway and Service Mesh solutions, including:
+  - Top 5 API Gateway solutions (Kong, Ambassador/Emissary, NGINX, Gloo Edge, Tyk)
+  - Top 5 Service Mesh implementations (Istio, Linkerd, Consul Connect, Cilium, Kuma)
+  - Comprehensive feature and performance comparisons
+  - Integration patterns between API Gateways and Service Meshes
+  - Decision frameworks and best practices
+
 ## Repository Structure
 
 ```
 .
-├── README.md                       # This file
-├── k8s-control-plane-manager.md    # Kubernetes management ecosystem guide
-└── .gitignore                      # Git ignore rules for documentation project
+├── README.md                                # This file
+├── k8s-control-plane-manager.md             # Kubernetes management ecosystem guide
+├── api-gateway-service-mesh-comparison.md   # API Gateway and Service Mesh comparison guide
+└── .gitignore                               # Git ignore rules for documentation project
 ```
 
 ## Document Status
@@ -27,6 +36,7 @@ A collection of guides, research notes, comparisons, reference materials, etc. f
 | Document | Version | Last Updated | Status |
 |----------|---------|--------------|--------|
 | [Kubernetes Management Ecosystem](k8s-control-plane-manager.md) | 1.0 | April 2025 | Active |
+| [API Gateway and Service Mesh Comparison](api-gateway-service-mesh-comparison.md) | 1.0 | April 2025 | Active |
 
 ## Disclaimer
 
