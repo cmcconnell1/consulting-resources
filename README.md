@@ -38,6 +38,14 @@ A collection of guides, research notes, comparisons, reference materials, etc. f
   - Integration patterns between API Gateways and Service Meshes
   - Decision frameworks and best practices
 
+- [Kubernetes Ingress Controllers Comparison](k8s-ingress-controllers-comparison.md) - Detailed comparison of standard vs. cloud provider ingress controllers, including:
+  - Analysis of standard controllers (NGINX, Traefik, HAProxy, etc.)
+  - Cloud provider options (AWS ALB, GKE Ingress, Azure Application Gateway)
+  - Feature and performance comparisons
+  - Cost considerations and operational trade-offs
+  - Decision framework and implementation guidance
+  - Real-world case studies
+
 ## Repository Structure
 
 ```
@@ -55,6 +63,7 @@ A collection of guides, research notes, comparisons, reference materials, etc. f
 ├── k8s-cni-future-trends.md                 # Kubernetes CNI future trends
 ├── k8s-cni-comparison-quick-reference.md    # Kubernetes CNI quick reference guide
 ├── api-gateway-service-mesh-comparison.md   # API Gateway and Service Mesh comparison guide
+├── k8s-ingress-controllers-comparison.md    # Kubernetes Ingress Controllers comparison
 └── .gitignore                               # Git ignore rules for documentation project
 ```
 
@@ -74,6 +83,7 @@ A collection of guides, research notes, comparisons, reference materials, etc. f
 | [Kubernetes CNI Future Trends](k8s-cni-future-trends.md) | 1.0 | May 2025 | Active |
 | [Kubernetes CNI Quick Reference](k8s-cni-comparison-quick-reference.md) | 1.0 | May 2025 | Active |
 | [API Gateway and Service Mesh Comparison](api-gateway-service-mesh-comparison.md) | 1.0 | April 2025 | Active |
+| [Kubernetes Ingress Controllers Comparison](k8s-ingress-controllers-comparison.md) | 1.0 | May 2025 | Active |
 
 ## Disclaimer
 
