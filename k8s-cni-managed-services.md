@@ -7,6 +7,7 @@
 ## Table of Contents
 - [Introduction](#introduction)
 - [Overview of Cloud Provider Default CNIs](#overview-of-cloud-provider-default-cnis)
+- [Kubernetes 2025 Compatibility Matrix](#kubernetes-2025-compatibility-matrix)
 - [Comparison Chart: Cilium vs. Default CNIs](#comparison-chart-cilium-vs-default-cnis-in-managed-kubernetes)
 - [AWS EKS with Cilium](#aws-eks-with-cilium)
 - [Azure AKS with Cilium](#azure-aks-with-cilium)
@@ -28,6 +29,57 @@ Before discussing Cilium deployment, it's important to understand the default CN
 | **AWS EKS** | <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCAyMDAgODAiPjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iODAiIGZpbGw9IiNmZmYiLz48dGV4dCB4PSIyMCIgeT0iNTAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIzMCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNGRjk5MDAiPkFXUyBFS1M8L3RleHQ+PC9zdmc+" width="120" alt="AWS EKS Logo"> | Amazon VPC CNI | Uses EC2 networking, assigns pod IPs from VPC CIDR, native AWS integration |
 | **Azure AKS** | <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCAyMDAgODAiPjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iODAiIGZpbGw9IiNmZmYiLz48dGV4dCB4PSIyMCIgeT0iNTAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIzMCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiMwMDc4RDQiPkF6dXJlIEFLUzwvdGV4dD48L3N2Zz4=" width="120" alt="Azure AKS Logo"> | Azure CNI | Assigns pod IPs from VNet, integrates with Azure networking features |
 | **GCP GKE** | <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCAyMDAgODAiPjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iODAiIGZpbGw9IiNmZmYiLz48dGV4dCB4PSIyMCIgeT0iNTAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIzMCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiM0Mjg1RjQiPkdDUCBHS0U8L3RleHQ+PC9zdmc+" width="120" alt="GCP GKE Logo"> | Kubenet/Calico | Kubenet for basic networking, Calico for network policies |
+
+## Kubernetes 2025 Compatibility Matrix
+
+The following matrix provides a comprehensive overview of the compatibility and feature support across various Kubernetes distributions as of 2025:
+
+### Managed Kubernetes Services
+
+| Distribution | Container Runtime | Pod Security | CNI | Support Lifecycle |
+|:-------------|:------------------|:-------------|:----|:------------------|
+| **GKE** <br><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCAyMDAgODAiPjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iODAiIGZpbGw9IiNmZmYiLz48dGV4dCB4PSIyMCIgeT0iNTAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIzMCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiM0Mjg1RjQiPkdDUCBHS0U8L3RleHQ+PC9zdmc+" width="80" alt="GCP GKE Logo"> | containerd | PSA | **Cilium** | ~14 months |
+| **EKS** <br><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCAyMDAgODAiPjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iODAiIGZpbGw9IiNmZmYiLz48dGV4dCB4PSIyMCIgeT0iNTAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIzMCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNGRjk5MDAiPkFXUyBFS1M8L3RleHQ+PC9zdmc+" width="80" alt="AWS EKS Logo"> | containerd | PSA | Amazon VPC CNI / **Cilium** optional | 14-18 months |
+| **AKS** <br><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCAyMDAgODAiPjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iODAiIGZpbGw9IiNmZmYiLz48dGV4dCB4PSIyMCIgeT0iNTAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIzMCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiMwMDc4RDQiPkF6dXJlIEFLUzwvdGV4dD48L3N2Zz4=" width="80" alt="Azure AKS Logo"> | containerd | PSA | Azure CNI Overlay / **Cilium** optional | 12-18 months |
+| **DigitalOcean** <br><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCAyMDAgODAiPjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iODAiIGZpbGw9IiNmZmYiLz48dGV4dCB4PSIyMCIgeT0iNTAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyMCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiMwMDgwRkYiPkRpZ2l0YWxPY2VhbjwvdGV4dD48L3N2Zz4=" width="80" alt="DigitalOcean Logo"> | containerd | PSA | **Cilium** | ~12 months |
+| **Linode** <br><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCAyMDAgODAiPjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iODAiIGZpbGw9IiNmZmYiLz48dGV4dCB4PSIyMCIgeT0iNTAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyNSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiMwMEIxNTkiPkxpbm9kZTwvdGV4dD48L3N2Zz4=" width="80" alt="Linode Logo"> | containerd | PSA | **Cilium** | ~12 months |
+| **Civo** <br><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCAyMDAgODAiPjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iODAiIGZpbGw9IiNmZmYiLz48dGV4dCB4PSIyMCIgeT0iNTAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyNSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiMwMDlBRkYiPkNpdm88L3RleHQ+PC9zdmc+" width="80" alt="Civo Logo"> | containerd | PSA | **Cilium** | ~12 months |
+
+### Enterprise Kubernetes Distributions
+
+| Distribution | Container Runtime | Pod Security | CNI | Support Lifecycle |
+|:-------------|:------------------|:-------------|:----|:------------------|
+| **OpenShift** <br><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCAyMDAgODAiPjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iODAiIGZpbGw9IiNmZmYiLz48dGV4dCB4PSIyMCIgeT0iNTAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyMCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNFRTAwMDAiPk9wZW5TaGlmdDwvdGV4dD48L3N2Zz4=" width="80" alt="OpenShift Logo"> | CRI-O | SCC | OVN-Kubernetes | ~18 months |
+| **RKE2** <br><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCAyMDAgODAiPjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iODAiIGZpbGw9IiNmZmYiLz48dGV4dCB4PSIyMCIgeT0iNTAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyNSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiMyMTk2RjMiPlJLRTI8L3RleHQ+PC9zdmc+" width="80" alt="RKE2 Logo"> | containerd | PSA | Canal / **Cilium** optional | ~12 months |
+| **k3s** <br><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCAyMDAgODAiPjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iODAiIGZpbGw9IiNmZmYiLz48dGV4dCB4PSIyMCIgeT0iNTAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyNSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiMyMTk2RjMiPmszczwvdGV4dD48L3N2Zz4=" width="80" alt="k3s Logo"> | containerd | PSA | Flannel / **Cilium** optional | ~12 months |
+| **Tanzu** <br><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCAyMDAgODAiPjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iODAiIGZpbGw9IiNmZmYiLz48dGV4dCB4PSIyMCIgeT0iNTAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyMCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiMwMDkxREEiPlRhbnp1PC90ZXh0Pjwvc3ZnPg==" width="80" alt="Tanzu Logo"> | containerd | PSA | Antrea / Calico optional | 12-18 months |
+| **Canonical** <br><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCAyMDAgODAiPjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iODAiIGZpbGw9IiNmZmYiLz48dGV4dCB4PSIyMCIgeT0iNTAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyMCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNFOTU0MjAiPkNhbm9uaWNhbDwvdGV4dD48L3N2Zz4=" width="80" alt="Canonical Logo"> | containerd | PSA | Calico | 12-18 months |
+
+### Development & Self-Managed
+
+| Distribution | Container Runtime | Pod Security | CNI | Support Lifecycle |
+|:-------------|:------------------|:-------------|:----|:------------------|
+| **Kubespray** <br><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCAyMDAgODAiPjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iODAiIGZpbGw9IiNmZmYiLz48dGV4dCB4PSIyMCIgeT0iNTAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyMCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiMzMjZDRTUiPkt1YmVzcHJheTwvdGV4dD48L3N2Zz4=" width="80" alt="Kubespray Logo"> | containerd | PSA | User choice (Calico, **Cilium**, etc.) | Community driven |
+| **Minikube** <br><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCAyMDAgODAiPjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iODAiIGZpbGw9IiNmZmYiLz48dGV4dCB4PSIyMCIgeT0iNTAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyMCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiMzMjZDRTUiPk1pbmlrdWJlPC90ZXh0Pjwvc3ZnPg==" width="80" alt="Minikube Logo"> | containerd | PSA | **Cilium** | Rolling latest |
+| **Kind** <br><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCAyMDAgODAiPjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iODAiIGZpbGw9IiNmZmYiLz48dGV4dCB4PSIyMCIgeT0iNTAiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyNSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiMzMjZDRTUiPktpbmQ8L3RleHQ+PC9zdmc+" width="80" alt="Kind Logo"> | containerd | PSA | Kindnet / test with others | Rolling latest |
+
+### Key Observations from the Matrix
+
+1. **Container Runtime Interface (CRI)**: containerd has become the standard CRI across almost all distributions, with OpenShift being the notable exception using CRI-O.
+
+2. **Pod Security**: Pod Security Admission (PSA) is the standard approach for most distributions, while OpenShift continues to use its Security Context Constraints (SCC) system.
+
+3. **CNI Trends**:
+   - Cilium has become the default or optional CNI for many distributions
+   - Major cloud providers still offer their native CNIs as default options
+   - Several smaller cloud providers have standardized on Cilium
+
+4. **Support Windows**:
+   - Support periods range from 12-18 months for most distributions
+   - Community-driven options like Kubespray have variable support
+   - Development environments (Minikube, Kind) follow rolling latest releases
+
+This matrix highlights the growing standardization around containerd, PSA, and the increasing adoption of Cilium as either the default or an officially supported optional CNI across the Kubernetes ecosystem.
 
 ## Comparison Chart: Cilium vs. Default CNIs in Managed Kubernetes
 
@@ -89,18 +141,18 @@ data:
   # EKS-specific settings
   enable-endpoint-routes: "true"
   auto-create-cilium-node-resource: "true"
-  
+
   # ENI mode configuration (if using)
   ipam: "eni"
   eni-tags: "{\"cluster\": \"eks-cluster-name\"}"
-  
+
   # AWS Load Balancer integration
   enable-aws-lb-controller: "true"
-  
+
   # Performance tuning
   enable-bpf-masquerade: "true"
   enable-local-redirect-policy: "true"
-  
+
   # Observability
   enable-hubble: "true"
   hubble-metrics-server: ":9091"
@@ -145,16 +197,16 @@ metadata:
 data:
   # AKS-specific settings
   enable-endpoint-routes: "true"
-  
+
   # Azure integration
   ipam: "azure"
   azure-resource-group: "aks-resource-group"
   azure-subscription-id: "subscription-id"
-  
+
   # Performance tuning
   enable-bpf-masquerade: "true"
   enable-local-redirect-policy: "true"
-  
+
   # Observability
   enable-hubble: "true"
   hubble-metrics-server: ":9091"
@@ -199,14 +251,14 @@ metadata:
 data:
   # GKE-specific settings
   enable-endpoint-routes: "true"
-  
+
   # GCP integration
   ipam: "kubernetes"
-  
+
   # Performance tuning
   enable-bpf-masquerade: "true"
   enable-local-redirect-policy: "true"
-  
+
   # Observability
   enable-hubble: "true"
   hubble-metrics-server: ":9091"

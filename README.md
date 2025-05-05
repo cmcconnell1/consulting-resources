@@ -25,6 +25,7 @@ A collection of guides, research notes, comparisons, reference materials, etc. f
     - [Decision Framework](k8s-cni-decision-framework.md) - Flowchart and guidance for selecting a CNI
     - [Managed Kubernetes Services](k8s-cni-managed-services.md) - CNI considerations for AWS EKS, Azure AKS, and GCP GKE
     - [Migration Paths](k8s-cni-migration-paths.md) - Guidance for migrating between CNI solutions
+    - [CNI Migration Tool](k8s-cni-migration-tool/README.md) - Tool for assessing and facilitating migration to Cilium
     - [Best Practices](k8s-cni-best-practices.md) - Comprehensive guidance for deploying and operating CNI solutions
     - [Future Trends](k8s-cni-future-trends.md) - Emerging trends in Kubernetes networking
     - [Quick Reference](k8s-cni-comparison-quick-reference.md) - Condensed guide for rapid decision-making
@@ -49,6 +50,7 @@ A collection of guides, research notes, comparisons, reference materials, etc. f
 ├── k8s-cni-decision-framework.md            # Kubernetes CNI decision framework
 ├── k8s-cni-managed-services.md              # Kubernetes CNI in managed services
 ├── k8s-cni-migration-paths.md               # Kubernetes CNI migration paths
+├── k8s-cni-migration-tool/                   # Kubernetes CNI migration tool
 ├── k8s-cni-best-practices.md                # Kubernetes CNI best practices
 ├── k8s-cni-future-trends.md                 # Kubernetes CNI future trends
 ├── k8s-cni-comparison-quick-reference.md    # Kubernetes CNI quick reference guide
@@ -67,6 +69,7 @@ A collection of guides, research notes, comparisons, reference materials, etc. f
 | [Kubernetes CNI Decision Framework](k8s-cni-decision-framework.md) | 1.0 | May 2025 | Active |
 | [Kubernetes CNI Managed Services](k8s-cni-managed-services.md) | 1.0 | May 2025 | Active |
 | [Kubernetes CNI Migration Paths](k8s-cni-migration-paths.md) | 1.0 | May 2025 | Active |
+| [Kubernetes CNI Migration Tool](k8s-cni-migration-tool/README.md) | 1.0 | May 2025 | Active |
 | [Kubernetes CNI Best Practices](k8s-cni-best-practices.md) | 1.0 | May 2025 | Active |
 | [Kubernetes CNI Future Trends](k8s-cni-future-trends.md) | 1.0 | May 2025 | Active |
 | [Kubernetes CNI Quick Reference](k8s-cni-comparison-quick-reference.md) | 1.0 | May 2025 | Active |
