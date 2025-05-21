@@ -554,6 +554,8 @@ The real power comes from combining hosted control plane solutions with multi-cl
    - Use network policies to isolate clusters
    - Consider confidential computing for sensitive workloads
 
+> **Related Resource**: For comprehensive guidance on implementing Kubernetes in hybrid cloud and on-premises environments, including enterprise distribution selection (Rancher, OpenShift, Tanzu, etc.) and critical infrastructure components, see the [Kubernetes for Hybrid Cloud and On-Premises Environments](k8s-hybrid-env-recommendations.md) guide.
+
 ## Evaluation Methodology
 
 When evaluating these tools, consider using the following structured approach:

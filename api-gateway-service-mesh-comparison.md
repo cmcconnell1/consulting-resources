@@ -269,6 +269,8 @@ Understanding the community health and adoption of these tools can help with eva
 
 A Service Mesh provides infrastructure layer for service-to-service communication, handling concerns such as service discovery, load balancing, encryption, observability, and resilience without requiring changes to application code.
 
+> **Related Resource**: For detailed guidance on selecting and implementing service mesh solutions in hybrid cloud and on-premises environments, see the [Kubernetes for Hybrid Cloud and On-Premises Environments](k8s-hybrid-env-recommendations.md) guide, which includes an in-depth comparison of service mesh technologies (Istio, Linkerd, Cilium, Consul Connect) specifically for hybrid deployments.
+
 ## Top 5 Service Mesh Solutions
 
 ### 1. Istio
