@@ -266,6 +266,12 @@ Beyond the key decision points covered in the flowchart, there are several addit
 - **Cilium and Calico** have well-documented upgrade procedures and generally maintain backward compatibility.
 - Test upgrades in a non-production environment before applying to production clusters.
 
+### Stateful Workloads Considerations
+
+- When running stateful workloads across multiple availability zones or regions, network performance and reliability become even more critical.
+- Consider how the CNI solution handles cross-zone and cross-region communication for distributed stateful applications.
+- For comprehensive guidance on implementing highly available stateful workloads in Kubernetes, see the [Kubernetes Stateful Workloads: Multi-Region and High Availability Guide](k8s-stateful-workloads-ha-guide.md).
+
 ## Document Information
 
 **Version:** 1.0

@@ -30,6 +30,14 @@ A collection of guides, research notes, comparisons, reference materials, etc. f
   - Implementation roadmap and case studies
   - Future trends in cloud-native cost management
 
+- [Kubernetes Stateful Workloads: Multi-Region and High Availability Guide](k8s-stateful-workloads-ha-guide.md) - Detailed guide for implementing highly available stateful workloads across multiple regions and availability zones, including:
+  - Cloud provider architecture comparison (AWS, Azure, GCP)
+  - Stateful workload operator implementations (Kafka, Elasticsearch, PostgreSQL, MongoDB, Redis)
+  - Implementation patterns for multi-AZ and multi-region deployments
+  - Cloud-specific implementation guides
+  - Performance benchmarks and cost considerations
+  - Real-world case studies and implementation recommendations
+
 - [Kubernetes CNI Comparison Guide](k8s-cni-comparison.md) - Detailed analysis of Kubernetes Container Network Interface (CNI) solutions, including:
   - Top CNI options (Cilium, Calico, Flannel, Weave Net, Canal)
   - Feature and performance comparisons
@@ -71,6 +79,7 @@ A collection of guides, research notes, comparisons, reference materials, etc. f
 ├── k8s-control-plane-manager.md             # Kubernetes management ecosystem guide
 ├── k8s-hybrid-env-recommendations.md        # Kubernetes for hybrid cloud environments
 ├── k8s-finops-cost-optimization.md          # Kubernetes FinOps and cost optimization guide
+├── k8s-stateful-workloads-ha-guide.md       # Kubernetes stateful workloads HA guide
 ├── k8s-cni-comparison.md                    # Kubernetes CNI comparison guide (main document)
 ├── k8s-cni-solutions-detail.md              # Kubernetes CNI solutions in detail
 ├── k8s-cni-comparison-tables.md             # Kubernetes CNI comparison tables
@@ -93,6 +102,7 @@ A collection of guides, research notes, comparisons, reference materials, etc. f
 | [Kubernetes Management Ecosystem](k8s-control-plane-manager.md) | 1.0 | April 2025 | Active |
 | [Kubernetes for Hybrid Cloud and On-Premises](k8s-hybrid-env-recommendations.md) | 1.0 | July 2024 | Active |
 | [Kubernetes FinOps and Cost Optimization](k8s-finops-cost-optimization.md) | 1.0 | May 2025 | Active |
+| [Kubernetes Stateful Workloads: Multi-Region and HA Guide](k8s-stateful-workloads-ha-guide.md) | 1.0 | May 2025 | Active |
 | [Kubernetes CNI Comparison](k8s-cni-comparison.md) | 1.0 | May 2025 | Active |
 | [Kubernetes CNI Solutions Detail](k8s-cni-solutions-detail.md) | 1.0 | May 2025 | Active |
 | [Kubernetes CNI Comparison Tables](k8s-cni-comparison-tables.md) | 1.0 | May 2025 | Active |

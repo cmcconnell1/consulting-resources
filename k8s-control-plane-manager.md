@@ -554,7 +554,14 @@ The real power comes from combining hosted control plane solutions with multi-cl
    - Use network policies to isolate clusters
    - Consider confidential computing for sensitive workloads
 
-> **Related Resource**: For comprehensive guidance on implementing Kubernetes in hybrid cloud and on-premises environments, including enterprise distribution selection (Rancher, OpenShift, Tanzu, etc.) and critical infrastructure components, see the [Kubernetes for Hybrid Cloud and On-Premises Environments](k8s-hybrid-env-recommendations.md) guide.
+6. **Stateful workload considerations**:
+   - Plan for high availability of stateful applications across regions and zones
+   - Implement proper backup and disaster recovery procedures
+   - Consider data sovereignty and compliance requirements
+
+> **Related Resources**:
+> - For comprehensive guidance on implementing Kubernetes in hybrid cloud and on-premises environments, including enterprise distribution selection (Rancher, OpenShift, Tanzu, etc.) and critical infrastructure components, see the [Kubernetes for Hybrid Cloud and On-Premises Environments](k8s-hybrid-env-recommendations.md) guide.
+> - For detailed guidance on implementing highly available stateful workloads across multiple regions and availability zones, see the [Kubernetes Stateful Workloads: Multi-Region and High Availability Guide](k8s-stateful-workloads-ha-guide.md).
 
 ## Evaluation Methodology
 

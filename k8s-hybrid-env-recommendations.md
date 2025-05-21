@@ -312,6 +312,8 @@ A comprehensive hybrid Kubernetes strategy should address:
 * **Identity management**: Implement unified authentication and authorization
 * **Cost management**: Establish visibility into resource utilization across environments
   * For detailed guidance on Kubernetes cost optimization and FinOps practices, including the hidden costs of building versus buying solutions, see the [Kubernetes FinOps and Cost Optimization Guide](k8s-finops-cost-optimization.md)
+* **Stateful workloads**: Design for high availability across regions and availability zones
+  * For comprehensive guidance on implementing stateful applications like databases and message queues in multi-region and multi-AZ environments, see the [Kubernetes Stateful Workloads: Multi-Region and High Availability Guide](k8s-stateful-workloads-ha-guide.md)
 * **Compliance and governance**: Develop consistent policies that work across cloud and on-premises
 
 ## Real-World Implementation Examples
