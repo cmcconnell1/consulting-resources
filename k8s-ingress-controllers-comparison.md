@@ -125,6 +125,8 @@ Cloud provider API ingress controllers integrate with the cloud provider's nativ
 | **Operations** | Higher operational costs | Lower operational costs |
 | **Scaling Costs** | Increases with cluster size | Increases with traffic volume |
 
+> **Note**: For a comprehensive analysis of the hidden costs in build vs. buy decisions and detailed FinOps practices for Kubernetes environments, see the [Kubernetes FinOps and Cost Optimization Guide](k8s-finops-cost-optimization.md).
+
 ## Decision Framework
 
 Consider the following factors when choosing between standard and cloud provider ingress controllers:

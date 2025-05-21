@@ -254,6 +254,12 @@ Beyond the key decision points covered in the flowchart, there are several addit
 - **Cilium** provides extensive observability through Hubble, which can integrate with Prometheus, Grafana, and other tools.
 - **Calico** integrates well with traditional networking tools and has good enterprise features through Calico Enterprise.
 
+### Cost Considerations
+
+- Evaluate both direct costs (licensing, support) and indirect costs (operational overhead, resource consumption).
+- Consider the total cost of ownership, including implementation, maintenance, and opportunity costs.
+- For a comprehensive analysis of Kubernetes cost optimization and build vs. buy considerations, see the [Kubernetes FinOps and Cost Optimization Guide](k8s-finops-cost-optimization.md).
+
 ### Upgrade Path
 
 - Consider the upgrade process and backward compatibility of each CNI solution.

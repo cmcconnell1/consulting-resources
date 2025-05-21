@@ -573,7 +573,7 @@ Create a weighted scoring system based on your organization's priorities:
 | Usability | Medium | Learning curve, documentation, UX |
 | Community | Medium | Adoption, support, longevity |
 | Integration | Medium-High | Works with existing tools and processes |
-| Cost | Medium | License, support, operational costs |
+| Cost | Medium | License, support, operational costs (see [Kubernetes FinOps Guide](k8s-finops-cost-optimization.md) for detailed cost analysis approaches) |
 
 ### 2. Conduct Structured Testing
 

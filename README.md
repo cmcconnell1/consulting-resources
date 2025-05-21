@@ -21,6 +21,15 @@ A collection of guides, research notes, comparisons, reference materials, etc. f
   - Strategic recommendations for different use cases
   - Emerging technologies like Cisco Sveltos
 
+- [Kubernetes FinOps and Cost Optimization Guide](k8s-finops-cost-optimization.md) - Comprehensive guide to financial operations and cost management for Kubernetes, including:
+  - Cost visibility and allocation strategies
+  - Build vs. Buy decision framework with TCO analysis
+  - Hidden costs of DIY solutions vs. commercial offerings
+  - Cost optimization techniques for clusters, workloads, and storage
+  - Comparison of FinOps tools and platforms
+  - Implementation roadmap and case studies
+  - Future trends in cloud-native cost management
+
 - [Kubernetes CNI Comparison Guide](k8s-cni-comparison.md) - Detailed analysis of Kubernetes Container Network Interface (CNI) solutions, including:
   - Top CNI options (Cilium, Calico, Flannel, Weave Net, Canal)
   - Feature and performance comparisons
@@ -61,6 +70,7 @@ A collection of guides, research notes, comparisons, reference materials, etc. f
 ├── README.md                                # This file
 ├── k8s-control-plane-manager.md             # Kubernetes management ecosystem guide
 ├── k8s-hybrid-env-recommendations.md        # Kubernetes for hybrid cloud environments
+├── k8s-finops-cost-optimization.md          # Kubernetes FinOps and cost optimization guide
 ├── k8s-cni-comparison.md                    # Kubernetes CNI comparison guide (main document)
 ├── k8s-cni-solutions-detail.md              # Kubernetes CNI solutions in detail
 ├── k8s-cni-comparison-tables.md             # Kubernetes CNI comparison tables
@@ -82,6 +92,7 @@ A collection of guides, research notes, comparisons, reference materials, etc. f
 |----------|---------|--------------|--------|
 | [Kubernetes Management Ecosystem](k8s-control-plane-manager.md) | 1.0 | April 2025 | Active |
 | [Kubernetes for Hybrid Cloud and On-Premises](k8s-hybrid-env-recommendations.md) | 1.0 | July 2024 | Active |
+| [Kubernetes FinOps and Cost Optimization](k8s-finops-cost-optimization.md) | 1.0 | May 2025 | Active |
 | [Kubernetes CNI Comparison](k8s-cni-comparison.md) | 1.0 | May 2025 | Active |
 | [Kubernetes CNI Solutions Detail](k8s-cni-solutions-detail.md) | 1.0 | May 2025 | Active |
 | [Kubernetes CNI Comparison Tables](k8s-cni-comparison-tables.md) | 1.0 | May 2025 | Active |

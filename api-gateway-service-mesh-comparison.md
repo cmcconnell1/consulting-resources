@@ -546,6 +546,7 @@ In this pattern, both the API Gateway and Service Mesh implement security contro
    - Monitor performance impact of each feature
    - Optimize resource allocation based on usage patterns
    - Consider the cumulative impact of multiple layers
+   - For detailed cost analysis approaches and build vs. buy considerations, see the [Kubernetes FinOps and Cost Optimization Guide](k8s-finops-cost-optimization.md)
 
 ## Decision Framework
 
