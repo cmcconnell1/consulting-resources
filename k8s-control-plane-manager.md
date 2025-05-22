@@ -223,7 +223,7 @@ A hosted control plane (HCP) solution allows you to run Kubernetes control plane
 
 ## Metrics and Community Data
 
-Understanding the community health and adoption of these tools can help with evaluation. Here are some metrics as of April 2025:
+Understanding the community health and adoption of these tools can help with evaluation. Here are some metrics as of May 2025:
 
 | Platform | GitHub Stars | Contributors | Latest Release | First Release | Commercial Support | CNCF Status |
 |:---------|:-------------|:-------------|:---------------|:--------------|:-------------------|:------------|
@@ -306,26 +306,38 @@ Understanding the community health and adoption of these tools can help with eva
 
 While hosted control plane solutions focus on creating and managing Kubernetes clusters, multi-cluster configuration managers focus on deploying and managing applications, policies, and configurations across multiple clusters.
 
+The multi-cluster configuration management space is seeing increased enterprise investment, with companies like Cisco Systems actively supporting projects like Sveltos, demonstrating the growing importance of sophisticated multi-cluster management capabilities in enterprise environments.
+
 ## Top 5 Multi-Cluster Configuration Managers
 
 <details>
-<summary><strong>1. Sveltos</strong></summary>
+<summary><strong>1. Sveltos (Cisco Systems)</strong></summary>
 
 - **Purpose**: Multi-cluster add-on and configuration manager
 - **Highlights**:
-  - Manages applications, configurations, and policies across clusters
-  - Works with any Kubernetes cluster (hosted, managed, on-prem)
-  - Supports Helm charts, YAML resources, network policies, Kyverno policies
-  - Declarative, Kubernetes-native approach
+  - Manages applications, configurations, and policies across multi-cloud clusters
+  - Works with any Kubernetes cluster (AWS EKS, Azure AKS, GCP GKE, hosted, managed, on-prem)
+  - Cloud-agnostic design enables consistent management across different infrastructure providers
+  - Supports Helm charts, YAML resources, Kustomize, Carvel ytt, and Jsonnet
+  - Declarative, Kubernetes-native approach with powerful templating
+  - Event-driven framework for dynamic deployments using Lua
   - Lightweight with minimal resource requirements
+  - Strong multi-tenancy support with full isolation capabilities
+  - Advanced observability with notifications (Slack, Teams, Discord, WebEx, Telegram, SMTP)
+  - Intelligent cluster classification and labeling for environment-specific deployments
 - **Use Cases**:
-  - Multi-cluster application deployment
-  - Consistent policy enforcement across clusters
-  - GitOps workflows across multiple clusters
+  - Multi-cloud and multi-cluster application deployment and management
+  - Consistent policy enforcement across different cloud providers
+  - GitOps workflows spanning AWS, Azure, GCP, and on-premises clusters
+  - Event-driven deployments and configuration management
+  - Multi-tenant Kubernetes environments across hybrid infrastructure
+  - Environment-specific configurations (dev/staging/prod across different clouds)
   - Complementary to hosted control plane solutions
+- **Industry Support**: Actively supported by Cisco Systems engineers, including contributions from Cisco DevOps Consulting Engineers
 - **Website**: [projectsveltos.io](https://projectsveltos.io/)
 - **GitHub**: [projectsveltos/sveltos](https://github.com/projectsveltos/sveltos)
-- **Maturity**: Production-ready
+- **Documentation**: [projectsveltos.github.io/sveltos](https://projectsveltos.github.io/sveltos/)
+- **Maturity**: Production-ready, CNCF Sandbox project
 
 </details>
 
@@ -426,7 +438,7 @@ While hosted control plane solutions focus on creating and managing Kubernetes c
 
 | Platform | Focus | GitOps | Policy Management | Resource Overhead | Multi-Tenancy | Best For |
 |:---------|:------|:-------|:-----------------|:------------------|:--------------|:---------|
-| Sveltos | Config & Add-ons | Yes | Strong | Low | Yes | Multi-cluster policy & config management |
+| Sveltos | Config & Add-ons | Yes | Strong | Low | Full Isolation | Multi-cluster policy & config management, event-driven deployments |
 | Karmada | Federation | Partial | Basic | Medium | Yes | Multi-cluster resource propagation |
 | KubeVela | App Delivery | Yes | Via OAM | Medium | Yes | Application-centric platforms |
 | Argo CD | Continuous Delivery | Native | Via plugins | Medium | Basic | GitOps workflows, visualization |
@@ -434,11 +446,11 @@ While hosted control plane solutions focus on creating and managing Kubernetes c
 
 ## Metrics and Community Data
 
-Understanding the community health and adoption of these tools can help with evaluation. Here are some metrics as of April 2025:
+Understanding the community health and adoption of these tools can help with evaluation. Here are some metrics as of May 2025:
 
 | Platform | GitHub Stars | Contributors | Latest Release | First Release | Commercial Support | CNCF Status |
 |:---------|:-------------|:-------------|:---------------|:--------------|:-------------------|:------------|
-| Sveltos | 1.8k+ | 35+ | v0.17.0 (Feb 2025) | 2022 | Yes | CNCF Sandbox |
+| Sveltos | 89+ | 17+ | v0.37.0+ (Jan 2025) | 2022 | Cisco Systems | CNCF Sandbox |
 | Karmada | 5.2k+ | 250+ | v1.12.0 (Mar 2025) | 2021 | Various | CNCF Incubating |
 | KubeVela | 6.5k+ | 180+ | v1.12.0 (Apr 2025) | 2020 | Various | CNCF Incubating |
 | Argo CD | 17k+ | 850+ | v2.12.0 (Mar 2025) | 2018 | Various | CNCF Graduated |
@@ -451,7 +463,13 @@ Understanding the community health and adoption of these tools can help with eva
 | Cluster Discovery | Native | Manual | Via Add-on | Manual | Manual |
 | Helm Support | Yes | Yes | Yes | Yes | Yes |
 | Kustomize Support | Yes | Yes | Yes | Yes | Yes |
+| Carvel ytt Support | Yes | No | No | No | No |
+| Jsonnet Support | Yes | No | No | No | No |
 | Policy Management | Native | Basic | Via OAM | Via plugins | Via controllers |
+| Event-Driven Deployments | Yes (Lua) | No | No | No | No |
+| Templating Engine | Advanced | Basic | Yes | Basic | Basic |
+| Multi-Tenancy | Full Isolation | Yes | Yes | Basic | Yes |
+| Notifications | Native (Slack, Teams, etc.) | No | No | Via plugins | Yes |
 | UI Dashboard | Basic | Yes | Yes | Advanced | No (CLI-focused) |
 | Progressive Delivery | No | No | Yes | Via Argo Rollouts | Via Flagger |
 | Resource Overhead | Very Low | Medium | Medium | Medium | Low |
@@ -477,44 +495,91 @@ The real power comes from combining hosted control plane solutions with multi-cl
 
 ## Example Architectures
 
-### Kamaji + Sveltos Architecture
+### Kamaji + Sveltos Multi-Cloud Architecture
 
-```plaintext
-+----------------------------+
-| Management Cluster         |
-| (Kamaji + Sveltos running) |
-+----------------------------+
-          |
-          | Kamaji provisions tenant clusters
-          v
-+------------------------+     +------------------------+
-| Customer Cluster A     |     | Customer Cluster B     |
-| (Hosted control plane) |     | (Hosted control plane) |
-+------------------------+     +------------------------+
-          |                            |
-          |   Sveltos applies configs  |  Sveltos applies configs
-          v                            v
- (Helm Charts, Policies, Apps)    (Helm Charts, Policies, Apps)
+```mermaid
+graph TD
+    subgraph "Management Cluster (On-Premises)"
+        Kamaji["Kamaji<br>(Control Plane Manager)"]
+        Sveltos["Sveltos<br>(Multi-Cloud Configuration Manager)"]
+    end
+
+    subgraph "AWS Cloud"
+        subgraph "Customer Cluster A (AWS EKS)"
+            CPAWS["Hosted Control Plane<br>(Kamaji-managed)"]
+            AppsAWS["Helm Charts<br>Network Policies<br>Monitoring Stack<br>Applications"]
+        end
+    end
+
+    subgraph "Azure Cloud"
+        subgraph "Customer Cluster B (Azure AKS)"
+            CPAzure["Hosted Control Plane<br>(Kamaji-managed)"]
+            AppsAzure["Helm Charts<br>Security Policies<br>Logging Stack<br>Applications"]
+        end
+    end
+
+    subgraph "On-Premises"
+        subgraph "Customer Cluster C (Bare Metal)"
+            CPOnPrem["Hosted Control Plane<br>(Kamaji-managed)"]
+            AppsOnPrem["Helm Charts<br>Backup Policies<br>Edge Applications"]
+        end
+    end
+
+    Kamaji -->|"Provisions tenant clusters"| CPAWS
+    Kamaji -->|"Provisions tenant clusters"| CPAzure
+    Kamaji -->|"Provisions tenant clusters"| CPOnPrem
+
+    Sveltos -->|"Applies AWS-specific configs"| AppsAWS
+    Sveltos -->|"Applies Azure-specific configs"| AppsAzure
+    Sveltos -->|"Applies on-prem configs"| AppsOnPrem
+
+    style Kamaji fill:#3F51B5,stroke:#303F9F,color:white
+    style Sveltos fill:#E91E63,stroke:#C2185B,color:white
+    style CPAWS fill:#FF9800,stroke:#F57C00,color:white
+    style CPAzure fill:#2196F3,stroke:#1976D2,color:white
+    style CPOnPrem fill:#4CAF50,stroke:#388E3C,color:white
+    style AppsAWS fill:#FFE0B2,stroke:#FF9800,color:black
+    style AppsAzure fill:#E3F2FD,stroke:#2196F3,color:black
+    style AppsOnPrem fill:#E8F5E8,stroke:#4CAF50,color:black
 ```
 
 ### Gardener + Argo CD Architecture
 
-```plaintext
-+----------------------------+
-| Management Cluster         |
-| (Gardener + Argo CD)       |
-+----------------------------+
-          |
-          | Gardener provisions clusters across clouds
-          v
-+------------------------+     +------------------------+
-| AWS Cluster            |     | Azure Cluster          |
-| (Full control plane)   |     | (Full control plane)   |
-+------------------------+     +------------------------+
-          |                            |
-          |   Argo CD syncs apps       |  Argo CD syncs apps
-          v                            v
- (Applications from Git repos)    (Applications from Git repos)
+```mermaid
+graph TD
+    subgraph "Management Cluster"
+        Gardener["Gardener<br>(Multi-Cloud Control Plane Manager)"]
+        ArgoCD["Argo CD<br>(GitOps Configuration Manager)"]
+        GitRepo["Git Repository<br>(Application Manifests)"]
+    end
+
+    subgraph "AWS Cloud"
+        AWSCluster["AWS EKS Cluster<br>(Full Control Plane)"]
+        AWSApps["Applications<br>(from Git repos)"]
+    end
+
+    subgraph "Azure Cloud"
+        AzureCluster["Azure AKS Cluster<br>(Full Control Plane)"]
+        AzureApps["Applications<br>(from Git repos)"]
+    end
+
+    Gardener -->|"Provisions clusters across clouds"| AWSCluster
+    Gardener -->|"Provisions clusters across clouds"| AzureCluster
+
+    GitRepo --> ArgoCD
+    ArgoCD -->|"Syncs applications"| AWSApps
+    ArgoCD -->|"Syncs applications"| AzureApps
+
+    AWSCluster --> AWSApps
+    AzureCluster --> AzureApps
+
+    style Gardener fill:#2E7D32,stroke:#1B5E20,color:white
+    style ArgoCD fill:#FF5722,stroke:#D84315,color:white
+    style GitRepo fill:#607D8B,stroke:#455A64,color:white
+    style AWSCluster fill:#FF9800,stroke:#F57C00,color:white
+    style AzureCluster fill:#2196F3,stroke:#1976D2,color:white
+    style AWSApps fill:#4CAF50,stroke:#388E3C,color:white
+    style AzureApps fill:#4CAF50,stroke:#388E3C,color:white
 ```
 
 ## Visual Analogy
@@ -665,7 +730,7 @@ Example decision matrix template:
 These personal research notes will be updated periodically as the ecosystem evolves and as I gather new information.
 
 **Version:** 1.0<br>
-**Last Updated:** April 2025<br>
+**Last Updated:** May 2025<br>
 **Author:** Personal research compilation<br>
 **Purpose:** Self-reference and knowledge sharing<br>
 **Feedback:** Corrections, updates, and feedback are welcome
