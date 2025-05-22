@@ -8,7 +8,7 @@ A collection of guides, research notes, comparisons, reference materials, etc. f
 ### Kubernetes Management
 - [Kubernetes Management Ecosystem Guide](k8s-control-plane-manager.md) - Comprehensive analysis of hosted control plane solutions and multi-cluster configuration managers, including:
   - Top 5 hosted control plane managers (Kamaji, vCluster, Gardener, K3v, CAPI)
-  - Top 5 multi-cluster configuration managers (Sveltos, Karmada, KubeVela, Argo CD, Flux CD)
+  - Top 5 multi-cluster configuration managers (Sveltos by Cisco Systems, Karmada, KubeVela, Argo CD, Flux CD)
   - Detailed comparison tables and metrics
   - Integration patterns and best practices
   - Future trends and recommendations
@@ -19,7 +19,7 @@ A collection of guides, research notes, comparisons, reference materials, etc. f
   - Service mesh selection for hybrid environments
   - Real-world implementation examples
   - Strategic recommendations for different use cases
-  - Emerging technologies like Cisco Sveltos
+  - Emerging technologies including Cisco Systems' Sveltos project
 
 - [Kubernetes FinOps and Cost Optimization Guide](k8s-finops-cost-optimization.md) - Comprehensive guide to financial operations and cost management for Kubernetes, including:
   - Cost visibility and allocation strategies
@@ -99,7 +99,7 @@ A collection of guides, research notes, comparisons, reference materials, etc. f
 
 | Document | Version | Last Updated | Status |
 |----------|---------|--------------|--------|
-| [Kubernetes Management Ecosystem](k8s-control-plane-manager.md) | 1.0 | April 2025 | Active |
+| [Kubernetes Management Ecosystem](k8s-control-plane-manager.md) | 1.0 | May 2025 | Active |
 | [Kubernetes for Hybrid Cloud and On-Premises](k8s-hybrid-env-recommendations.md) | 1.0 | July 2024 | Active |
 | [Kubernetes FinOps and Cost Optimization](k8s-finops-cost-optimization.md) | 1.0 | May 2025 | Active |
 | [Kubernetes Stateful Workloads: Multi-Region and HA Guide](k8s-stateful-workloads-ha-guide.md) | 1.0 | May 2025 | Active |
